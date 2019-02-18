@@ -1,0 +1,73 @@
+<div class='card'>
+
+        <div class='card-header'>
+            {{pageTitle}}
+        </div>
+    
+        <div class='card-body'>
+            <div class='row'>
+                <div class='col-md-2'>Filter By:</div>
+                <div class='col-md-4'>
+                    <input type='text'
+                           [(ngModel)]='listFilter' />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-mod-6'>
+                    <h4>Filtered By:{{listFilter}}</h4>
+                </div>
+            </div>
+    
+            <div class='table-responsive'>
+                <table class='table'
+                       *ngIf='addresses && addresses.length'>
+                    <thead>
+                        <tr>
+                           
+                            <th> Restaurant Name</th>
+                            <th> Area</th>
+                            <th>  City</th>
+                            <th> State</th>
+                            <th> Country</th>
+                          
+                            <th>Pincode</th>
+                         
+                          
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr *ngFor='let address of filteredAddresses '>
+                           
+                            <td>{{address.hotelName}}</td>
+                            <td>
+                                <a [routerLink]="['/addresses' , address.addressId]">
+                                    {{ address.area }}
+                                </a>
+                            </td>
+                            <td>{{address.city}}</td>
+                            <!-- <td>{{ <restaurant class="address"></restaurant> }}</td> -->
+                            <td>{{address.state}}</td>
+                            <!-- <td>{{ address.state| lowercase | convertToSpaces: '-' }}</td> -->
+                            <!-- <td>{{ <restaurant class="address"></restaurant> }}</td> -->
+                            <td>{{address.country}}</td>
+                            <!-- <td>{{ restaurant.price | currency:'INR':'symbol':'1.2-2' }}</td> -->
+                            <!-- <td>{{product.starRating}}</td> -->
+                            <!-- <td>
+                                <app-star [rating]='restaurant.starRating'
+                                          (ratingClicked)='onRatingClicked($event)'>
+    
+                                </app-star>
+                            </td> -->
+                            <td>{{address.pincode}}</td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+    
+    
+        </div>
+    </div>

@@ -1,0 +1,94 @@
+<form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Online Ordering form to create an account.</p>
+      <hr>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Full Name" name="name" required>
+
+      <label for="image"><b>Profile Photo</b></label>
+      <input type="image" placeholder="Add Profile Photo" name="Profile Photo" required>
+
+      <!-- <form action="/action_page.php">
+        <input type="file" name="pic" accept="image/*">
+        <input type="submit">
+      </form> -->
+      
+      <form action="myform.cgi"> <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+        <label for="fileupload"> Select a photo to upload</label> <br>
+        <input type="image" src="/assets/images/person.png" alt="Submit" width="100"> </form>
+
+      
+        <label for="DateOfBirth"><b>DateOfBirth</b></label><br>
+        <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="2015-08-09" ><br>
+        <!-- <input type="text" placeholder="Enter DateOfBirth " name="DateOfBirth" required> -->
+
+        <label for="DateOfBirth"><b>Gender</b></label><br>
+        <form>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
+          </form>
+
+       <label for="address"><b>Address</b></label>
+
+       <table border = "0">
+          <tr>
+             <td> House number:</td>
+             <td><input type = "text" placeholder="Enter house/appartment Number.." name="name" required></td>
+          </tr>
+          <tr>
+             <td>Street: </td>
+             <td><input type = "text" placeholder="Enter street name.." name="name" required></td>
+          </tr>
+          <tr>
+             <td>Village/City</td>
+             <td><input type = "text" placeholder="Enter village/city name.." name="name" required></td>
+          </tr>
+          <tr>
+              <td>District: </td>
+              <td><input type = "text" placeholder="Enter district name.." name="name" required></td>
+           </tr>
+           <tr>
+              <td>State: </td>
+              <td><input type = "text" placeholder="Enter state name.." name="name" required></td>
+           </tr>
+           <tr>
+              <td>Country: </td>
+              <td><input type = "text" placeholder="Enter country name.." name="name" required></td>
+           </tr>
+           <tr>
+              <td>Postal code: </td>
+              <td><input type = "text" placeholder="Enter Postal code.." name="name" required></td>
+           </tr>
+       </table>
+
+
+
+      <label for="mobileno"><b>Mobile Number</b></label><br>
+      <input type="number" placeholder="Enter Mobile Number" name="mobno" required><br>
+
+
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>

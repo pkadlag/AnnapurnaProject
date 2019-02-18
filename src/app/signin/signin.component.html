@@ -1,0 +1,54 @@
+
+<div class="container" >
+  
+  <h1><font color=orange><b>Sign up Or Login into Annapurna......</b></font></h1>
+
+        <form action="/action_page.php">
+          <div class="row">
+            <div class="vl">
+              <span class="vl-innertext">OR</span>
+            </div>
+             <div class="col">
+              
+                <input type="text" name="username" placeholder="Email Id/Mobile Number" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="signIn">
+              
+            </div>
+      
+            <div class="col">
+              <div class="hide-md-lg">
+                <p>Or sign in manually:</p>
+              </div>
+           
+ <!-- <input type="image" src="/assets/images/annapurna1.jpg" alt="Submit" height="140" >    -->
+  
+ <a href="#" class="github btn">
+                  <i class="fa fa-github"></i> Login with GitHub
+                 </a>
+ <!-- <button ng-click="$location.path('localhost:4200/login.jsp?un={{username}}&pw={{password}}')" 
+ class="btn btn-lg btn-warning">Log In!</button> -->
+                <a href="#" class="linkedin btn">
+                  <i class="fa fa-linkedin"></i> Login with LinkedIn
+                </a>       
+    
+            </div>
+            
+          </div>
+        </form>
+   
+      
+      <div class="bottom-container">
+        <div class="row">
+          <div class="col">
+            <a class='nav-link btn' routerLinkActive='active' [routerLink]="['/signup']" style="color:white">New User ? Sign up</a>
+          </div>
+          <div class="col">
+            <a class='nav-link btn' routerLinkActive='active' [routerLink]="['/forgotpassword']" style="color:white">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+

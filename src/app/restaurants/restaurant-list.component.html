@@ -1,0 +1,80 @@
+<div class='card'>
+
+        <div class='card-header'>
+            {{pageTitle}}
+        </div>
+    
+        <div class='card-body'>
+            <div class='row'>
+                <div class='col-md-2'>Filter By:</div>
+                <div class='col-md-4'>
+                    <input type='text'
+                           [(ngModel)]='listFilter' />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-mod-6'>
+                    <h4>Filtered By:{{listFilter}}</h4>
+                </div>
+            </div>
+    
+            <div class='table-responsive'>
+                <table class='table'
+                       *ngIf='restaurants && restaurants.length'>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class='btn btn-primary'
+                                        (click)='toggleImage()'>
+                                    {{ showImage? 'Hide' : 'Show'}} Image
+                                </button>
+                            </th>
+                            <th> Restaurant Name</th>
+                            <th> Restaurant Address</th>
+                            <th> Category</th>
+                            <th> Food Items</th>
+                          
+                            <th> 5 Star Rating</th>
+                            <th> Review</th>
+                          
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr *ngFor='let restaurant of filteredRestaurants '>
+                            <td>
+                                <img *ngIf='showImage' 
+                                     [src]='restaurant.photos'
+                                     [title]='restaurant.name'
+                                     [style.width.px]='imageWidth'
+                                     [style.margin.px]='imageMargin'> </td>
+                            <td>
+                                <a [routerLink]="['/restaurants' , restaurant.restaurantId]">
+                                    {{ restaurant.name }}
+                                </a>
+                            </td>
+                            <td>{{restaurant.address}}</td>
+                            <!-- <td>{{ <restaurant class="address"></restaurant> }}</td> -->
+                            <td>{{ restaurant.type| lowercase | convertToSpaces: '-' }}</td>
+                            <!-- <td>{{ <restaurant class="address"></restaurant> }}</td> -->
+                            <td>{{restaurant.foodItems}}</td>
+                            <!-- <td>{{ restaurant.price | currency:'INR':'symbol':'1.2-2' }}</td> -->
+                            <!-- <td>{{product.starRating}}</td> -->
+                            <td>
+                                <app-star [rating]='restaurant.starRating'
+                                          (ratingClicked)='onRatingClicked($event)'>
+    
+                                </app-star>
+                            </td>
+                            <td>{{restaurant.reviews}}</td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+    
+    
+        </div>
+    </div>
